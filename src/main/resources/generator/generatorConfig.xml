@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <classPathEntry location="G:\maven\apache-maven-3.3.9\repository\com\oracle\ojdbc14\11.2.0.3\ojdbc14-11.2.0.3.jar" />
+
+    <context id="Oracle" targetRuntime="MyBatis3">
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="false"/>
+        </plugin>
+
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@//192.168.1.193:1521/cykjdev"
+                        userId="credit"
+                        password="credit">
+        </jdbcConnection>
+
+        <javaTypeResolver type="com.caiyi.financial.loan.cebpromot.generator.MyJavaTypeResolver">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.caiyi.financial.loan.cebpromot.model" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.caiyi.financial.loan.cebpromot.mapper" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.caiyi.financial.loan.cebpromot.mapper" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <table tableName="tb_youyu_app_manage" domainObjectName="LoanAppManageDto"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="iam_id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+        </table>
+      <!--  <table tableName="TB_CALL_RECORD" domainObjectName="CamierCallRecordDto"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+           &lt;!&ndash; <generatedKey column="ilo_id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;
+        </table>
+        <table tableName="TB_MSG_RECORD" domainObjectName="CamierMsgRecordDto"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+           &lt;!&ndash; <generatedKey column="ilo_id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;
+        </table>-->
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,44 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    name: datasource
+    url: jdbc:mysql://localhost:3306:pdc
+    username: root
+    password: example
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+server:
+  port: 8090
+logging:
+  level:
+    tk.mybatis: trace
+
+mybatis:
+   mapper-locations: classpath:io/github/lxl/pdc/mapper/**/*.xml
+
+mapper:
+   not-empty: false
+   identity: mysql
+
+
+pagehelper:
+    helperDialect: mysql
+    returnPageInfo: check
+    supportMethodsArguments: true
+    reasonable: true
+    params: count=countSql
+
