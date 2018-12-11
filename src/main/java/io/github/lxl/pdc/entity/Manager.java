@@ -10,8 +10,17 @@ package io.github.lxl.pdc.entity;
  * @Version: 1.0
  */
 public class Manager  {
+    /**
+     * 管理员id
+     */
     private int id;
+    /**
+     * 管理员名称
+     */
     private String name;
+    /**
+     * 管理员电话
+     */
     private String phone;
 
     public int getId() {

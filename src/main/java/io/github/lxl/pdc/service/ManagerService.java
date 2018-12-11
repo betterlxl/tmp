@@ -30,8 +30,8 @@ public class ManagerService {
 
     }
 
-    public int updateManage(int id) {
-        int num = managerMapper.updateManager(id);
+    public int updateManage(Manager manager) {
+        int num = managerMapper.updateManager(manager);
         return num;
     }
 

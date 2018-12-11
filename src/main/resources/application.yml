@@ -28,7 +28,7 @@ logging:
     tk.mybatis: trace
 
 mybatis:
-   mapper-locations: classpath:mapping/ManagerMapper.xml
+   mapper-locations: classpath:mapping/*Mapper.xml
    type-aliases-package: io.github.lxl.pdc.entity.Manager
 
 mapper:

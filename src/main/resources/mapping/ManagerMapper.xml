@@ -8,7 +8,7 @@
         <result column="phone" jdbcType="VARCHAR" property="phone" />
     </resultMap>-->
 
-    <insert id="saveManger"  parameterType="io.github.lxl.pdc.entity.Manager" keyProperty="id">
+    <insert id="saveManger"  parameterType="io.github.lxl.pdc.entity.Manager" useGeneratedKeys="true" keyProperty="id">
         insert into manager(name,phone)values(#{name},#{phone})
     </insert>
     <!--查询Manager-->
@@ -17,8 +17,8 @@
     </select>
 
     <!--修改Manager -->
-    <update id="updateManager"  >
-        update manager set name=#{name},phone=#{phone} where id =#{id}
+    <update id="updateManager" parameterType="io.github.lxl.pdc.entity.Manager">
+        update manager set name=#{name},phone=#{phone} where id = #{id}
     </update>
     <!--删除Manager-->
     <delete id="deleteManager"  >
