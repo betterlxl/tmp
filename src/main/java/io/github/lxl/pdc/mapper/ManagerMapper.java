@@ -2,6 +2,9 @@ package io.github.lxl.pdc.mapper;
 
 import io.github.lxl.pdc.entity.Manager;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.BaseMapper;
+
+import java.util.List;
 
 /**
  * @Description: mapper
@@ -13,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * @Version: 1.0
  */
 @Repository
-public interface ManagerMapper {
+public interface ManagerMapper extends BaseMapper<Manager> {
     Manager getManager(int id);
 
     int saveManger(Manager manager);
@@ -21,4 +24,6 @@ public interface ManagerMapper {
     int updateManager(Manager manager);
 
     int deleteManager(int id);
+
+    List<Manager> selectList();
 }

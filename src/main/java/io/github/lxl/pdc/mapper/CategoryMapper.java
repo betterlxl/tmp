@@ -2,6 +2,7 @@ package io.github.lxl.pdc.mapper;
 
 import io.github.lxl.pdc.entity.Category;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.BaseMapper;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 * @Version:        1.0
 */
 @Repository
-public interface CategoryMapper {
+public interface CategoryMapper extends BaseMapper {
 
     int saveCategory(Category category);
 

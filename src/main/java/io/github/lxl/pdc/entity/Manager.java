@@ -1,5 +1,7 @@
 package io.github.lxl.pdc.entity;
 
+import lombok.Data;
+
 /**
  * @Description: Manager实体
  * @Author: lxl
@@ -9,6 +11,7 @@ package io.github.lxl.pdc.entity;
  * @UpdateRemark:
  * @Version: 1.0
  */
+@Data
 public class Manager  {
     /**
      * 管理员id
@@ -21,7 +24,7 @@ public class Manager  {
     /**
      * 管理员电话
      */
-    private String phone;
+    /*private String phone;
 
     public int getId() {
         return id;
@@ -56,5 +59,5 @@ public class Manager  {
                 '}';
 
 
-    }
+    }*/
 }

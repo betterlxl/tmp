@@ -1,5 +1,7 @@
 package io.github.lxl.pdc.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -11,6 +13,7 @@ import java.util.Date;
  * @UpdateRemark: 修改内容
  * @Version: 1.0
  */
+@Data
 public class Category {
     /**
      * 产品品类id
@@ -46,7 +49,7 @@ public class Category {
      */
     private int level;
 
-    public int getId() {
+    /*public int getId() {
         return id;
     }
 
@@ -116,7 +119,7 @@ public class Category {
 
     public void setDelete(boolean delete) {
         this.delete = delete;
-    }
+    }*/
 
     /**
      * 是否删除
@@ -125,7 +128,7 @@ public class Category {
 
 
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Category{" +
                 "id=" + id +
@@ -138,6 +141,6 @@ public class Category {
                 ", level="         + level +
                 ", delete="        + delete +
                 '}';
-    }
+    }*/
 
 }

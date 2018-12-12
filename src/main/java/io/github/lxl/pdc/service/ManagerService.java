@@ -1,9 +1,12 @@
 package io.github.lxl.pdc.service;
 
+import io.github.lxl.pdc.entity.Category;
 import io.github.lxl.pdc.entity.Manager;
 import io.github.lxl.pdc.mapper.ManagerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description: 业务层
@@ -38,5 +41,8 @@ public class ManagerService {
     public int deleteManager(int id) {
         int num = managerMapper.deleteManager(id);
         return num;
+    }
+    public List<Manager> managerList(){
+        return managerMapper.selectList();
     }
 }
