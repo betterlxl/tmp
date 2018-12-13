@@ -2,8 +2,11 @@ package io.github.lxl.pdc.entity;
 
 import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
 import java.util.Date;
 @Data
+@Table(name = "product")
 public class Product {
     /**
      * 产品id
@@ -12,6 +15,7 @@ public class Product {
     /**
      * 产品名称
      */
+    @Column(name = "product_name")
     private String productName;
     /**
      * 产品品类ids

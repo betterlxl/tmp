@@ -1,7 +1,9 @@
 package io.github.lxl.pdc.entity;
 
 import lombok.Data;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.persistence.Table;
 import java.util.Date;
 
 /**

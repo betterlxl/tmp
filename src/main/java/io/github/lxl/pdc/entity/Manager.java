@@ -24,6 +24,7 @@ public class Manager  {
     /**
      * 管理员电话
      */
+    private String phone;
     /*private String phone;
 
     public int getId() {

@@ -1,6 +1,8 @@
 package io.github.lxl.pdc.mapper;
 
 import io.github.lxl.pdc.entity.Category;
+import io.github.lxl.pdc.entity.Product;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.BaseMapper;
 
@@ -16,7 +18,7 @@ import java.util.List;
 * @Version:        1.0
 */
 @Repository
-public interface CategoryMapper extends BaseMapper {
+public interface CategoryMapper  {
 
     int saveCategory(Category category);
 
@@ -27,4 +29,7 @@ public interface CategoryMapper extends BaseMapper {
     int deleteCategory(int id);
 
     List<Category> categoryList();
+
+
+    List<Product> queryProductByCategory(@Param("categoryId") int id);
 }

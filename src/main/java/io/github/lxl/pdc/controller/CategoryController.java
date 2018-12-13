@@ -22,7 +22,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping()
+    @PutMapping()
     public int saveCategory(Category category) {
         System.out.println("参数" + category.toString());
         int id = categoryService.saveCategory(category);
@@ -40,13 +40,18 @@ public class CategoryController {
         return categoryService.queryCategory(id).toString();
     }
 
-    @PutMapping("/id")
+    @PostMapping("/{id}")
     public int updateCategory(Category category){
         return  categoryService.updateCategory(category);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public int deleteCategory(int id){
         return categoryService.deleteCategory(id);
+    }
+
+    @GetMapping("/list/{id}")
+    public Object queryProductListByCategory(@PathVariable("id") int id){
+        return  categoryService.queryProductByCategory(id);
     }
 }

@@ -43,7 +43,7 @@ public class ManagerController {
 
 
     @DeleteMapping(value = "/{id}")
-    public int deleteManager(@PathVariable int id) {
+    public int deleteManager(@PathVariable("id") int id) {
         return managerService.deleteManager(id);
     }
 

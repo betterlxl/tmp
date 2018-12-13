@@ -16,7 +16,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @Repository
-public interface ManagerMapper extends BaseMapper<Manager> {
+public interface ManagerMapper  {
     Manager getManager(int id);
 
     int saveManger(Manager manager);
